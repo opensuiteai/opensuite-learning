@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Páginas existentes
+// Páginas públicas
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Home from "./pages/Home";
 
-// Panel Layout
+// Panel (dashboard)
 import DashboardLayout from "./pages/dashboard/DashboardLayout";
-
-// Subpáginas del panel
 import DashboardHome from "./pages/dashboard/DashboardHome";
+
+// Páginas del panel (las iremos creando)
 import Ebooks from "./pages/dashboard/Ebooks";
 import MiniEbooks from "./pages/dashboard/MiniEbooks";
 import Presentaciones from "./pages/dashboard/Presentaciones";
@@ -25,11 +24,11 @@ export default function App() {
       <Routes>
 
         {/* Rutas públicas */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Rutas del panel */}
+        {/* Dashboard con layout */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="ebooks" element={<Ebooks />} />
@@ -38,11 +37,4 @@ export default function App() {
           <Route path="pdf-tools" element={<PdfTools />} />
           <Route path="logos" element={<Logos />} />
           <Route path="historias" element={<Historias />} />
-          <Route path="creditos" element={<Creditos />} />
-          <Route path="configuracion" element={<Configuracion />} />
-        </Route>
-
-      </Routes>
-    </Router>
-  );
-}
+          <Route path="
